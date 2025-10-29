@@ -1,6 +1,6 @@
 # hugo.toml
 
-baseURL = 'https://your-username.github.io/' # 暂时先这样写，后续部署时会改
+baseURL = 'https://chensgitid.github.io/' # 暂时先这样写，后续部署时会改
 languageCode = 'zh-cn'
 title = '欢迎来到小石榴的世界'  # 将 {宝宝名字} 替换成实际名字
 theme = 'PaperMod'
