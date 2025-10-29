@@ -23,6 +23,13 @@ theme = 'PaperMod'
   url = 'https://www.chenyunsi.com/dad/'
   weight = 2
 
+[[menu.main]]
+  identifier = 'posts'
+  name = '关于妈妈'
+  url = 'https://www.chenyunsi.com/mom/'
+  weight = 3
+
+
 # 启用相关功能
 [markup.goldmark.renderer]
   unsafe = true
