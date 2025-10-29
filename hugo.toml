@@ -14,13 +14,13 @@ theme = 'PaperMod'
 [[menu.main]]
   identifier = 'about'
   name = '关于宝宝'
-  url = '/about/'
+  url = '/baby/'
   weight = 1
 
 [[menu.main]]
   identifier = 'posts'
   name = '关于爸爸'
-  url = 'http://dad.chenyunsi.com'
+  url = '/dad/'
   weight = 2
 
 # 启用相关功能
