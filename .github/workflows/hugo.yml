@@ -1,0 +1,64 @@
+# .github/workflows/hugo.yml
+
+name: Deploy Hugo site to Pages
+
+on:
+  # 当推送到 "main" 分支时触发工作流
+  push:
+    branches: [ "main" ]
+  # 允许你从 Actions 标签手动触发工作流（可选）
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 允许一个并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # 构建任务
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # 这是关键！因为 PaperMod 是作为子模块引入的，必须递归拉取
+          submodules: recursive
+          fetch-depth: 0 # 获取所有历史，便于生成更准确的最后修改时间
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          # 使用 Extended 版本，确保主题功能完整
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Build with Hugo
+        run: |
+          hugo --minify
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # 部署任务
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        id: deployment
