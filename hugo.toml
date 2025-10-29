@@ -12,19 +12,19 @@ theme = 'PaperMod'
 
 # 菜单配置，这里定义网站右上角的导航栏
 [[menu.main]]
-  identifier = 'about'
+  identifier = 'baby'
   name = '关于宝宝'
   url = 'https://www.chenyunsi.com/baby/'
   weight = 1
 
 [[menu.main]]
-  identifier = 'posts'
+  identifier = 'dad'
   name = '关于爸爸'
   url = 'https://www.chenyunsi.com/dad/'
   weight = 2
 
 [[menu.main]]
-  identifier = 'posts'
+  identifier = 'mom'
   name = '关于妈妈'
   url = 'https://www.chenyunsi.com/mom/'
   weight = 3
