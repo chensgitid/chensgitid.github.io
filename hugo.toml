@@ -1,0 +1,28 @@
+# hugo.toml
+
+baseURL = 'https://your-username.github.io/' # 暂时先这样写，后续部署时会改
+languageCode = 'zh-cn'
+title = '欢迎来到小石榴的世界'  # 将 {宝宝名字} 替换成实际名字
+theme = 'PaperMod'
+
+# PaperMod 主题的特定配置
+[params]
+  description = "记录小石榴成长的珍贵瞬间" # 网站描述
+  author = "小石榴的爸爸妈妈" # 作者名
+
+# 菜单配置，这里定义网站右上角的导航栏
+[[menu.main]]
+  identifier = 'about'
+  name = '关于宝宝'
+  url = '/about/'
+  weight = 1
+
+[[menu.main]]
+  identifier = 'posts'
+  name = '关于爸爸'
+  url = 'http://dad.chenyunsi.com'
+  weight = 2
+
+# 启用相关功能
+[markup.goldmark.renderer]
+  unsafe = true  # 这允许在 Markdown 中使用一些 HTML 标签，对插入图片样式有帮助
