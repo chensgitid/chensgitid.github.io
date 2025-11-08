@@ -1,6 +1,6 @@
 # hugo.toml
 
-baseURL = 'https://www.chenyunsi.com/' 
+baseURL = 'https://www.chenyunsi.com/'
 languageCode = 'zh-cn'
 title = '欢迎来到小石榴的世界'
 theme = 'PaperMod'
@@ -9,6 +9,10 @@ theme = 'PaperMod'
 [params]
   description = "记录小石榴成长的珍贵瞬间"
   author = "小石榴的爸爸妈妈"
+  js = [
+    "https://cdn.jsdelivr.net/npm/chart.js",
+    "/js/growth-chart.js"
+  ]
 
 # 菜单配置，这里定义网站右上角的导航栏
 [[menu.main]]
