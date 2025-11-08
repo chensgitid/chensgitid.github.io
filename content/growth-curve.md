@@ -3,9 +3,6 @@ title: "成长曲线 · 体重"
 noindex: true
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="/js/growth-chart.js"></script>
-
 <div style="width:100%; max-width:900px; margin:0 auto;">
   <canvas id="growthChart" height="400"></canvas>
 </div>
